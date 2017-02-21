@@ -2,7 +2,7 @@
 
 cd /home/app/webapp
 
-SCHEMA_VERSION=`rails runner "puts ActiveRecord::Migrator.current_version" | tail -1`
+SCHEMA_VERSION=`chpst -u app bundle exec rails runner "puts ActiveRecord::Migrator.current_version" | tail -1`
 
 chpst -u app bundle exec rake db:create
 
